@@ -35,7 +35,7 @@ login_manager.init_app(app)
 if os.getenv('DATABASE_URL') == None:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 else: 
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL').replace("postgres", "postgresql")
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
