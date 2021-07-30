@@ -10,12 +10,14 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm, ContactForm
 from flask_gravatar import Gravatar
 from functools import wraps
-import smtplib, os
+from decouple import config
+import smtplib
 
 # Constants
-USER_MAIL = 'dummy124635789@gmail.com'
-USER_PASSWORD = 'dummy@1234'
-TARGET_MAIL = 'matthewadrianus@gmail.com'
+USER_MAIL = config("USER_MAIL")
+USER_PASSWORD = config("USER_PASSWORD")
+TARGET_MAIL = config("TARGET_MAIL")
+
 # Configure Application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
