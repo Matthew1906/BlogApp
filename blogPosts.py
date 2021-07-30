@@ -71,9 +71,6 @@ class Comments(db.Model):
     parent_post = relationship("BlogPost", back_populates="comments")
     body = db.Column(db.Text, nullable = False)
 
-# Create database
-db.create_all()
-
 # Default loading user function
 @login_manager.user_loader
 def load_user(user_id):
