@@ -25,6 +25,7 @@ Flask-CKEditor==0.4.6
 Flask-SQLAlchemy==2.5.1
 Flask-WTF==0.15.1
 greenlet==1.1.0
+gunicorn==20.1.0
 idna==2.10
 IMAPClient==2.2.0
 ipykernel==5.3.4
