@@ -174,6 +174,7 @@ def contact():
                 f"Phone: {request.form['phone']}\n"\
                 f"Message: {request.form['message']}\n"
             )
+        return redirect(url_for('get_all_posts'))
     return render_template("contact.html", form = contact_form)
 
 ## Make new post - Admin Privilege
